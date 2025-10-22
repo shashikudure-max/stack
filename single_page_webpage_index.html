@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Single Page — Minimal</title>
+  <meta name="description" content="A clean, responsive single-page template." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed; /* violet */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:linear-gradient(180deg,var(--bg),#071029);}
+    .container{max-width:1100px;margin:40px auto;padding:28px}
+
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:18px;box-shadow:0 8px 30px rgba(124,58,237,0.18)}
+    h1.title{margin:0;font-size:20px}
+    p.tag{margin:0;color:var(--muted);font-size:13px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:26px;border-radius:var(--radius);backdrop-filter:blur(6px);box-shadow:0 6px 30px rgba(2,6,23,0.6);}
+    .lead{font-size:28px;margin:0 0 12px 0;line-height:1.05}
+    .sub{color:var(--muted);margin:0 0 18px 0}
+    .cta-row{display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:12px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#4f46e5);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+    /* features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+    .feature{padding:14px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+    .feature h4{margin:0 0 6px 0}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* right column form preview */
+    .preview{display:flex;flex-direction:column;gap:12px}
+    .phone{background:linear-gradient(180deg,#071229, #06101e);padding:14px;border-radius:18px;border:1px solid rgba(255,255,255,0.03)}
+    .screen{height:320px;border-radius:12px;background:linear-gradient(180deg,#020617,#061229);padding:12px;color:var(--muted);display:flex;flex-direction:column}
+    .app-title{font-weight:800;color:white}
+    .stat-row{display:flex;gap:10px;margin-top:auto}
+    .stat{flex:1;padding:8px;border-radius:10px;background:rgba(255,255,255,0.02);text-align:center}
+
+    /* contact */
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+    .input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    textarea{min-height:120px}
+
+    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}.container{margin:20px auto;padding:18px}}
+    @media (max-width:520px){.features{grid-template-columns:1fr}.brand .logo{width:44px;height:44px}.lead{font-size:22px}}
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SP</div>
+        <div>
+          <h1 class="title">SinglePage — Minimal</h1>
+          <p class="tag">Fast landing template • Responsive • Easy to edit</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="muted">Docs</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h2 class="lead">Beautiful, minimal landing page built for speed.</h2>
+        <p class="sub">A single-file template you can copy and modify. Includes a preview box, feature tiles, and a contact form — all responsive.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" id="downloadBtn">Download HTML</button>
+          <button class="btn btn-ghost" id="demoBtn">Live Demo</button>
+        </div>
+
+        <div class="features" id="features">
+          <div class="feature">
+            <h4>Responsive</h4>
+            <p>Adapts from mobile to desktop with a clean layout.</p>
+          </div>
+          <div class="feature">
+            <h4>Accessible</h4>
+            <p>Good color contrast, semantic HTML and focus states.</p>
+          </div>
+          <div class="feature">
+            <h4>Customizable</h4>
+            <p>Easy to change colors, fonts and content in one file.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:18px">
+          <h3 style="margin:0 0 8px 0">Get in touch</h3>
+          <form id="contact" class="contact" onsubmit="handleSubmit(event)">
+            <input class="input" name="name" placeholder="Your name" required />
+            <input class="input" name="email" placeholder="Email" required />
+            <textarea name="message" placeholder="Message"></textarea>
+            <div>
+              <button class="btn btn-primary" type="submit">Send message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <aside class="preview card">
+        <div class="phone">
+          <div class="screen">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div class="app-title">App Preview</div>
+              <div class="muted">v1.0</div>
+            </div>
+
+            <div style="flex:1;display:flex;flex-direction:column;gap:8px;margin-top:12px">
+              <div style="padding:10px;border-radius:10px;background:rgba(255,255,255,0.02)">Welcome to the demo — tap buttons to interact.</div>
+              <div style="display:flex;gap:8px">
+                <div style="flex:1;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);text-align:center">Overview</div>
+                <div style="flex:1;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);text-align:center">Stats</div>
+              </div>
+            </div>
+
+            <div class="stat-row">
+              <div class="stat"><strong>12K</strong><div class="muted">users</div></div>
+              <div class="stat"><strong>4.8</strong><div class="muted">rating</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;text-align:center;color:var(--muted);font-size:13px">Preview panel — copy this file to host it anywhere.</div>
+      </aside>
+    </section>
+
+    <footer>
+      Built with ♥ — Modify freely. — <span class="muted">Single-file HTML • 2025</span>
+    </footer>
+  </div>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const form = new FormData(e.target);
+      const name = form.get('name');
+      const email = form.get('email');
+      // Minimal client-side validation demo
+      alert('Thanks, ' + name + '! (demo) — we would send your message from ' + email);
+      e.target.reset();
+    }
+
+    // Download the current HTML as a file
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const html = document.documentElement.outerHTML;
+      const blob = new Blob([html],{type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'index.html'; document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    // Demo shows a small interactive prompt
+    document.getElementById('demoBtn').addEventListener('click', ()=>{
+      const popup = document.createElement('div');
+      popup.style.position='fixed';popup.style.left='20px';popup.style.bottom='20px';popup.style.padding='14px';popup.style.borderRadius='10px';popup.style.background='linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))';popup.style.border='1px solid rgba(255,255,255,0.03)';popup.style.backdropFilter='blur(6px)';popup.innerHTML='<strong>Live Demo</strong><div style="margin-top:8px;color:var(--muted)">This is a static demo inside the page. Use the Download button to save.
+        <div style="margin-top:8px;text-align:right"><button class="btn btn-ghost" onclick="this.closest(\'div\').remove()">Close</button></div>';
+      document.body.appendChild(popup);
+    });
+  </script>
+</body>
+</html>
